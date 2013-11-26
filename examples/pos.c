@@ -7,7 +7,10 @@ int main(void)
 {
     accel_t t;
 
+    accel_init();
+    accel_on();
     accel_get(&t);
+    accel_off();
 
     printf("%lf, %lf, %lf\n", t.x, t.y, t.z);
 

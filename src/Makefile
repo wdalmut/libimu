@@ -14,7 +14,9 @@ all: init accel.o
 
 accel.o:
 ifeq ($(board),mma7660fc)
-	${CC} ${CFLAGS} -c $(board)/$(board).c -D${board}_get=accel_get -o ${BUILD_DIR}/accel.o -I.
+	${CC} ${CFLAGS} -c $(board)/$(board).c \
+		-D${board}_get=accel_get -D${board}_on=accel_on -D${board}_off=accel_off -D${board}_init=accel_init\
+		-o ${BUILD_DIR}/accel.o -I${board}
 else
 	@echo "*********************************************************************"
 	@echo "* WARNING YOU HAVE TO SELECT AT LEAST ONE BOARD (board=mma7660fc)   *"

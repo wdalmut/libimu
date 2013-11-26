@@ -9,10 +9,11 @@ int main(void)
 
     accel_init();
     accel_on();
-    accel_get(&t);
-    accel_off();
-
-    printf("%lf, %lf, %lf\n", t.x, t.y, t.z);
+    while(1) {
+        accel_get(&t);
+        printf("%c %3.5f %c %3.5f %c %3.5f", 'x', t.x, 'y', t.y, 'z', t.z);
+        printf("\r");
+    }
 
     return EXIT_SUCCESS;
 }

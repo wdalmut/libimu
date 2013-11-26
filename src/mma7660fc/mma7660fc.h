@@ -13,7 +13,8 @@
 
 #define MMA7660_MODE        0x07
 #define MMA7660_STAND_BY    0x00
-#define MMA7660_ACTIVE      0x01
+#define MMA7660_TEST        0x01
+#define MMA7660_ACTIVE      0x02
 
 #define MMA7660_SR          0x08 //sample rate register
 #define AUTO_SLEEP_120      0X00 //120 sample per second
@@ -27,5 +28,8 @@
 
 #define MMA7660_PDET        0x09
 #define MMA7660_PD          0x0A
+
+// Private functions
+double mma7660fc_convert(uint8_t);
 
 #endif

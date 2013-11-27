@@ -64,11 +64,16 @@ void mma7660fc_off(void)
 
 double mma7660fc_convert(uint8_t value)
 {
+    double value_f = 0;
+
     if ((value & 0x60) > 0) {
-        value = -((~value + 1) & 0x1F); //ca2
+        value = ((~value + 1) & 0x1F); //ca2
+        value_f = -((double)value);
+    } else {
+        value_f = ((double)value);
     }
 
-    double value_f = ((double)value) * 0.047; // accel
+    value_f *= 0.047;
 
     return value_f;
 }

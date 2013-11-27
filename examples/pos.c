@@ -11,7 +11,7 @@ int main(void)
     accel_on();
     while(1) {
         accel_get(&t);
-        printf("%c %3.5f %c %3.5f %c %3.5f", 'x', t.x, 'y', t.y, 'z', t.z);
+        printf("x: %3.5f y: %3.5f z: %3.5f", t.x, t.y, t.z);
         printf("\r");
     }
 

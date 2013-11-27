@@ -50,7 +50,7 @@ void mma7660fc_get(accel_t *data)
     uint8_t buffer[11];
 
     ioctl(i2cdev, I2C_SLAVE, MMA7660_ADDR);
-    read(i2cdev, buffer, 11);
+    read(i2cdev, buffer, 3); //only x,y,z
 
     data->x = mma7660fc_convert(buffer[0]);
     data->y = mma7660fc_convert(buffer[1]);

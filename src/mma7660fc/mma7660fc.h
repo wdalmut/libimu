@@ -15,7 +15,7 @@
 #define MMA7660_STAND_BY    0x00
 #define MMA7660_ACTIVE      0x01
 
-#define MMA7660_SR          0x08 //sample rate register
+#define MMA7660_SR          0x08 //sample rate register (mode scps = 0 reg: 7)
 #define AUTO_SLEEP_120      0X00 //120 sample per second
 #define AUTO_SLEEP_64       0X01
 #define AUTO_SLEEP_32       0X02

@@ -40,7 +40,7 @@ void mma7660fc_on(void)
     uint8_t buffer[2];
 
     buffer[0] = MMA7660_MODE;
-    buffer[1] = MMA7660_TEST;
+    buffer[1] = MMA7660_ACTIVE;
     ioctl(i2cdev, I2C_SLAVE, MMA7660_ADDR);
     write(i2cdev, buffer, 2);
 }
